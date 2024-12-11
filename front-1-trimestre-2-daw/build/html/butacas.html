@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butacas</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<header class="nav-bar">
+    <div class="nav-bar__logo">
+        <a href="home.html"><img src="../images/logo.png" alt="Minimal Cinema Logo"></a>
+    </div>
+    <div class="nav-bar__buttons">
+        <a href="categorias.html" class="nav-bar__button">MOVIES</a>
+        <a href="dondeestamos.html" class="nav-bar__button">CONTACTO</a>
+    </div>
+</header>
+<body>
+    <main class="content">
+        <section class="butacas__seat-selection">
+            
+            <!---
+            <div class="butacas__movie-info">
+                <img src="" alt="Poster Placeholder" class="butacas__movie-poster">
+                <p class="butacas__movie-description"></p>
+            </div>
+            -->
+
+
+            <div class="butacas__seats-container">
+                <h3 class="butacas__seats-title">Asientos</h3>
+                <div class="butacas__seats-legend">
+                    <div><span class="sbutacas__eat butacas__seat-free"></span> Libre</div>
+                    <div><span class="butacas__seat butacas__seat-selected"></span> Seleccionado</div>
+                    <div><span class="butacas__seat butacas__seat-occupied"></span> Ocupado</div>
+                </div>
+
+                <div class="butacas__screen">PANTALLA</div>
+
+                <div class="butacas__seats--grid" id="seatContainer"></div>
+
+                <div class="butacas__selected-seats">
+                    <h3>Tus asientos</h3>
+                    <div class="butacas__seats--display"></div>
+                    <a href="pago.html">
+                        <button class="butacas__purchase--button">COMPRAR</button>
+                        <button class="boton-eliminar" id="boton-eliminar-js"> <a href="../html/home.html">Eliminar</a></button>
+                    </a>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+</body>
+
+<script src="../js/butacas.js"></script>
+
+<footer class="footer--grid">
+    <div class="footer--contenedor">
+        <a href="../html/PoliticaPrivacidad.html">Politica de Privacidad</a>
+    </div>
+    <div class="footer--contenedor">
+        <a href="../html/PoliticaCoockies.html">Politica de Coockies</a>
+    </div>
+    <div class="align-icons">
+        <div class="footer--contenedor">
+           <a href="https://x.com/i/flow/login"><img src="../images/logo_tiwtter.png" alt="Twitter"></a>
+        </div>
+        <div class="footer--contenedor">
+            <a href="https://www.instagram.com/accounts/login/"> <img src="../images/logo_instagram.png" alt="Instagram"> </a>
+        </div>
+        <div class="footer--contenedor">
+            <a href="https://discord.com/login"> <img src="../images/logo_discord.png" alt="Discord"></a>
+        </div>
+    </div>
+</footer>
+</html>
+

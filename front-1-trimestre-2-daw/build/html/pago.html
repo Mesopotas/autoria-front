@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<header class="nav-bar">
+    <div class="nav-bar__logo">
+        <a href="home.html"><img src="../images/logo.png" alt="Minimal Cinema Logo"></a>
+    </div>
+    <div class="nav-bar__buttons">
+        <a href="categorias.html" class="nav-bar__button">MOVIES</a>
+        <a href="dondeestamos.html" class="nav-bar__button">CONTACTO</a>
+    </div>
+</header>
+<body>
+    <main class="content">
+        <section class="pago__summary-section">
+            <h2 class="pago__section-title">Resumen</h2>
+            <p class="pago__summary-text">
+                Donec lacinia consequat efficitur. In et tortor id risus dignissim ornare. Proin quis porta lacus. Sed vulputate molestie gravida. Nulla aliquet lacinia neque ac tempor. Class aptent taciti sociosqu ad litora torquent.
+            </p>
+        </section>
+        
+        <section class="pago__personal-info-section">
+            <h2 class="pago__section-title">Datos Personales</h2>
+            <form class="pago__personal-info-form">
+                <div class="pago__form-row">
+                    <div class="pago__form-group">
+                        <label for="nombre">Nombre*</label>
+                        <input type="text" id="nombre" required>
+                    </div>
+                    <div class="pago__form-group">
+                        <label for="apellido">Apellido*</label>
+                        <input type="text" id="apellido" required>
+                    </div>
+                </div>
+                <div class="pago__form-row">
+                    <div class="pago__form-group">
+                        <label for="correo">Correo*</label>
+                        <input type="email" id="correo" required>
+                    </div>
+                    <div class="pago__form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono">
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <section class="pago__detalles">
+            <h2 class="pago__section-title">Detalles</h2>
+            <div class="pago__details-content">
+                <label for="tickets">Tus entradas:</label><div>
+                <div class="butacas__seats--display"></div>
+            </div>
+            </div>
+            <a href="./home.html"><button class="pago__purchase--button">FINALIZAR COMPRA</button></a>
+        </section>
+    </main>
+</body>
+
+<footer class="footer--grid">
+    <div class="footer--contenedor">
+        <a href="../html/PoliticaPrivacidad.html">Politica de Privacidad</a>
+    </div>
+    <div class="footer--contenedor">
+        <a href="../html/PoliticaCoockies.html">Politica de Coockies</a>
+    </div>
+    <div class="align-icons">
+        <div class="footer--contenedor">
+           <a href="https://x.com/i/flow/login"><img src="../images/logo_tiwtter.png" alt="Twitter"></a>
+        </div>
+        <div class="footer--contenedor">
+            <a href="https://www.instagram.com/accounts/login/"> <img src="../images/logo_instagram.png" alt="Instagram"> </a>
+        </div>
+        <div class="footer--contenedor">
+            <a href="https://discord.com/login"> <img src="../images/logo_discord.png" alt="Discord"></a>
+        </div>
+    </div>
+</footer>
+</html>
+
+
+<script src="../js/pago.js"></script>

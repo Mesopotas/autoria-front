@@ -1,0 +1,187 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+@use "../base/typography" as *;
+
+.pago__content {
+    padding: 40px 100px;
+    color: $text-color;
+  }
+  
+  .pago__section-title {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 10px;
+    color: white;
+  
+    &::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 2px;
+      background-color: $primary-color;
+      margin: 5px auto 15px;
+    }
+  }
+  
+  .pago__summary-text {
+    text-align: center;
+    font-size: 1em;
+    line-height: 1.5;
+    max-width: 500px;
+    margin: 0 auto;
+    color: white;
+  }
+  
+  .pago__summary-section {
+    padding-bottom: 10px;
+    color: white;
+  }
+  
+  .pago__personal-info-section {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: white;
+  }
+  
+  .pago__personal-info-form {
+    @include flex-center(flex-start, center);
+    flex-direction: column;
+    gap: 20px;
+    color: white;
+  }
+  
+  .pago__form-row {
+    @include flex-center(flex-start, center);
+    gap: 20px;
+  }
+  
+  .pago__form-group {
+    display: flex;
+    flex-direction: column;
+  
+    label {
+      font-size: 0.9em;
+      margin-bottom: 5px;
+    }
+  
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+      padding: 10px;
+      border: none;
+      border-bottom: 1px solid $text-color;
+      background-color: transparent;
+      color: $text-color;
+      width: 200px;
+  
+      &:focus {
+        outline: none;
+        border-bottom: 1px solid $input-focus-color;
+      }
+    }
+  }
+  
+  .pago__details-content {
+    text-align: center;
+    padding-top: 10px;
+    color: white;
+  }
+  
+  .pago__detalles {
+    display: grid;
+    justify-items: center;
+    padding-top: 20px;
+  }
+  
+  #tickets {
+    width: 300px;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    background-color: #333;
+    color: $text-color;
+    text-align: center;
+  }
+  
+  .pago__purchase--button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    &:hover{
+        background-color: #E50914;
+        color: #FFFFFF;
+    }
+  }
+  @media (max-width: 390px) {
+    .pago__summary-section,
+    .pago__personal-info-section,
+    .pago__detalles {
+      padding: 10px; // Reducir el padding general en secciones
+      text-align: center; // Centrar el texto
+    }
+  
+    .pago__section-title {
+      font-size: 1.5em; // Reducir el tamaño de los títulos
+      margin-bottom: 15px;
+    }
+  
+    .pago__summary-text {
+      font-size: 0.9em; // Texto más pequeño
+      line-height: 1.4; // Mejora la legibilidad
+    }
+  
+    .pago__personal-info-form {
+      .pago__form-row {
+        display: flex;
+        flex-direction: column; // Cambiar a columna para pantallas pequeñas
+        gap: 15px; // Espaciado entre los grupos de formulario
+  
+        .pago__form-group {
+          width: 100%; // Ocupa todo el ancho del contenedor
+  
+          label {
+            font-size: 0.9em; // Texto más pequeño para etiquetas
+            display: block; // Asegura que las etiquetas estén encima del campo
+          }
+  
+          input {
+            width: 100%; // Campos de texto ocupan todo el ancho disponible
+            padding: 8px; // Ajustar el padding para mantener estética
+            font-size: 0.9em; // Texto más pequeño
+          }
+        }
+      }
+    }
+  
+    .pago__details-content {
+      display: flex;
+      flex-direction: column; // Asegura que los detalles estén en una columna
+      align-items: center;
+  
+      label {
+        font-size: 0.9em; // Ajustar el tamaño del texto
+        margin-bottom: 5px;
+      }
+  
+      input {
+        width: 90%; // Campos más pequeños
+        padding: 8px;
+        font-size: 0.9em;
+      }
+    }
+  
+    .pago__purchase--button {
+      width: 90%; // Botón ocupa la mayoría del ancho
+      margin: 20px auto 0; // Centrar el botón y añadir margen superior
+      padding: 10px;
+      font-size: 1em; // Ajustar tamaño del texto
+      text-align: center;
+    }
+  }
+  

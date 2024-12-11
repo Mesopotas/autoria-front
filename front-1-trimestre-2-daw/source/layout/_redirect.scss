@@ -1,0 +1,8 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+@use "../base/typography" as *;
+
+a{
+    text-decoration: none;
+    color: white;
+}

@@ -1,0 +1,405 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+@use "../base/typography" as *;
+
+
+
+#seatContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  padding: 20px;
+}
+
+.sala-container {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.sala-container h2 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.butacas__seats--grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+  gap: 18px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.seat {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: lightgray;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.seat.ocupado {
+  background-color: red;
+}
+
+.seat.libre {
+  background-color: green;
+}
+
+.seat.selected {
+  background-color: yellow;
+  border-color: #ff0;
+}
+
+
+
+.butacas__seats--display {
+  padding: 10px 10px 10px 10px;
+  margin-top: 10px;
+  width: 100%;
+  min-height: 30px;
+  margin-bottom: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  background-color: #333333; /* Fondo oscuro */
+  color: #ffffff; /* Texto blanco */
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.5;
+  overflow-x: auto; /* Manejo de desbordamiento horizontal */
+  white-space: nowrap; /* Mantén el texto en una línea */
+}
+
+
+
+
+.butacas__seat-selection {
+  display: flex;
+  justify-content: center;
+  padding: 40px 100px;
+  gap: 40px;
+}
+
+.butacas__movie-info {
+  max-width: 465px;
+  color: $text-color;
+}
+
+.butacas__movie-poster {
+  width: 100%;
+  border-radius: $radius-image;
+  margin-bottom: 20px;
+}
+
+.butacas__movie-description {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.butacas__seats-container {
+  text-align: center;
+  color: $text-color;
+  width: 55%;
+  padding-right: 5%;
+}
+
+.butacas__seats-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.butacas__seats-legend {
+  @include flex-center(center);
+  gap: 20px;
+  margin-bottom: 20px;
+  font-size: 0.9em;
+}
+
+.butacas__seat-free {
+  @include seat($widht-seat, $height-seat, $display-seat, $background-size-seat, $background-position-seat);
+  background-image: url('../../build/images/asiento_gris.png');
+}
+
+.butacas__seat-selected {
+  @include seat($widht-seat, $height-seat, $display-seat, $background-size-seat, $background-position-seat);
+  background-image: url('../../build/images/asiento_amarillo.png');
+}
+
+.butacas__seat-occupied {
+  @include seat($widht-seat, $height-seat, $display-seat, $background-size-seat, $background-position-seat);
+  background-image: url('../../build/images/asiento_rojo.png');
+}
+
+.butacas__screen {
+  display: grid;
+  align-items: center;
+  background-color: #CCCCCC;
+  color: #000000;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+
+.butacas__selected-seats {
+  text-align: center;
+  color: $text-color;
+}
+
+.butacas__seats--input {
+  width: 200px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: none;
+  background-color: #333;
+  color: $text-color;
+  text-align: center;
+}
+
+.butacas__purchase--button {
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+    &:hover {
+    background-color: #E50914;
+    color: #FFFFFF;
+  }
+}
+
+.boton-eliminar {
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+    &:hover {
+    background-color: green;
+    color: #FFFFFF;
+  }
+}
+
+@media (max-width: 768px) {
+  .butacas__seat-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+
+    .butacas__movie-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      .butacas__movie-poster {
+        max-width: 80%; // Ajusta el tamaño del póster
+        height: auto;
+        margin-bottom: 15px;
+      }
+
+      .butacas__movie-description {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin: 0 10px;
+      }
+    }
+
+    .butacas__seats-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      .butacas__seats-title {
+        text-align: center;
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+      }
+
+      .butacas__seats-legend {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+
+        div {
+          font-size: 0.9rem;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+
+          .butacas__seat {
+            width: 15px;
+            height: 15px;
+          }
+        }
+      }
+
+      .butacas__screen {
+        text-align: center;
+        font-size: 1rem;
+        background-color: #ddd;
+        padding: 5px;
+        margin: 0 auto;
+        max-width: 80%;
+        border-radius: 5px;
+      }
+
+      .butacas__seats--grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); // Muestra 4 columnas en móvil
+        gap: 10px;
+        justify-content: center;
+
+        .butacas__seat-row {
+          display: grid;
+          grid-template-columns: repeat(5, 1fr); // 5 asientos por fila
+          gap: 5px;
+
+          .butacas__seat-free {
+            width: 20px;
+            height: 20px;
+            background-color: #eee;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+          }
+        }
+      }
+
+      .butacas__selected-seats {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+
+        h3 {
+          font-size: 1.2rem;
+        }
+
+        .butacas__seats--input {
+          width: 80%;
+          padding: 10px;
+          font-size: 1rem;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          text-align: center;
+        }
+
+        .butacas__purchase--button {
+          padding: 10px 20px;
+          font-size: 1rem;
+          background-color: #532e91;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .butacas__seat-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+
+    .butacas__movie-info {
+      display: none; // Oculta la imagen y la descripción de la película
+    }
+
+    .butacas__seats-container {
+      width: 100%; // Usa todo el ancho disponible
+      padding: 0;
+
+      .butacas__seats-title {
+        text-align: center;
+        font-size: 1.5rem; // Tamaño ajustado del título
+        margin-bottom: 10px;
+      }
+
+      .butacas__seats-legend {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+
+        div {
+          font-size: 0.9rem;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+
+          .butacas__seat {
+            width: 15px;
+            height: 15px;
+          }
+        }
+      }
+
+      .butacas__screen {
+        text-align: center;
+        font-size: 1rem;
+        background-color: #ddd;
+        padding: 5px;
+        margin: 0 auto;
+        max-width: 80%;
+        border-radius: 5px;
+      }
+
+      .butacas__seats--grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); // Grilla de 4 columnas en móvil
+        gap: 10px;
+        justify-content: center;
+      }
+
+      .butacas__selected-seats {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+
+        h3 {
+          font-size: 1.4rem; // Ajuste del tamaño del título
+          text-align: center;
+        }
+
+        .butacas__seats--input {
+          width: 80%;
+          padding: 10px;
+          font-size: 1rem;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          text-align: center;
+        }
+
+        .butacas__purchase--button {
+          padding: 10px 20px;
+          font-size: 1.2rem;
+          background-color: #532e91;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

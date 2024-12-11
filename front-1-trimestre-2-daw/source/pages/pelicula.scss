@@ -1,0 +1,271 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+@use "../base/typography" as *;
+
+
+.pelicula__movie-detail {
+    @include flex-center(flex-start);
+    gap: 40px;
+    padding: 40px 100px;
+  }
+    
+.pelicula__movie-poster img {
+    width: 350px;
+    height: auto;
+    border-radius: $radius-image;
+    box-shadow: $box-shadow;
+}
+  
+.pelicula__movie-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 80px;
+}
+  
+.pelicula__movie-info-left{
+    flex: 2;
+    color: #FFFFFF;
+    font-size: 1.1em;
+}
+
+.pelicula__movie-info-right {
+    flex: 1;
+    color: #FFFFFF;
+    font-size: 1.1em;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+  
+.pelicula__movie-title {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+}
+  
+.pelicula__movie-info-item {
+    margin: 10px 0;
+}
+  
+.pelicula__movie-synopsis-title {
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+  
+.pelicula__movie-description {
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+  
+.pelicula__showtime-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+.pelicula__showtime-button {
+    @include boton-peque(15px 75px, 1em, $text-color);
+}
+  
+.pelicula__similar-section {
+    margin-top: 50px;
+    padding: 0 50px;
+    color: $text-color;
+  
+    .pelicula__similar-title {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      padding-left: 50px;
+  
+      &::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 2px;
+        background-color: $primary-color;
+    }
+}
+  
+.pelicula__similar-posters {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 25px;
+      padding-left: 5%;
+      padding-right: 5%;
+      text-align: center;
+      img {
+        max-width: 240px;
+        min-width: 165px;
+        height: 300px;
+        border-radius: $radius-image;
+        box-shadow: $box-shadow;
+        transition: transform 0.3s;
+  
+        &:hover {
+          transform: scale(1.05);
+            }
+        }
+    }
+}
+  
+
+@media (max-width: 768px) {
+    .pelicula__movie-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 10px;
+  
+      .pelicula__movie-poster {
+        align-self: center;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+  
+        img {
+          max-width: 80%;
+          height: auto;
+        }
+      }
+  
+      .pelicula__movie-content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+  
+        .pelicula__movie-info-left,
+        .pelicula__movie-info-right {
+          width: 80%;
+          padding-left: 15%;
+          padding-right: 10%;
+        }
+  
+        .pelicula__movie-info-left {
+          .pelicula__movie-title {
+            font-size: 1.8rem;
+            text-align: center;
+          }
+  
+          .pelicula__movie-info-item {
+            font-size: 1rem;
+          }
+  
+          .pelicula__movie-synopsis-title {
+            font-size: 1.4rem;
+            margin-top: 10px;
+            text-align: center;
+          }
+  
+          .sinopsis {
+            font-size: 0.9rem;
+            text-align: justify;
+          }
+        }
+  
+        .pelicula__movie-info-right {
+          text-align: center;
+  
+          .pelicula__movie-info-item {
+            font-size: 1rem;
+          }
+  
+          .pelicula__showtime-container {
+            display: flex;
+            flex-direction: row;
+            gap: 55px;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+  
+            .pelicula__showtime-button {
+              font-size: 1rem;
+              padding: 10px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 5px;
+              padding-left: 20%;
+              padding-right: 20%;
+            }
+          }
+        }
+      }
+    }
+  
+    .pelicula__similar-section {
+      padding: 10px;
+  
+      .pelicula__similar-title {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 20px;
+        position: relative;
+  
+        &::after {
+          content: '';
+          display: block;
+          width: 80px;
+          height: 2px;
+          background-color: red;
+          margin: 5px auto 0;
+        }
+      }
+  
+      .pelicula__similar-posters {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        justify-items: center;
+  
+        a {
+          img {
+            max-width: 100%;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 390px) {
+    .pelicula__movie-detail {
+      text-align: center;
+  
+      .pelicula__movie-poster img {
+        max-width: 90%; // Ajusta el tamaño del póster
+      }
+  
+      .pelicula__movie-content {
+        .pelicula__movie-info-left,
+        .pelicula__movie-info-right {
+          width: 90%; // Reduce el ancho para dispositivos más pequeños
+          padding-left: 5%;
+          padding-right: 5%;
+        }
+  
+        .pelicula__movie-info-left {
+          .pelicula__movie-title {
+            font-size: 1.5rem; // Reduce el tamaño del título
+          }
+        }
+      }
+    }
+  
+    .pelicula__similar-section {
+      .pelicula__similar-posters {
+        display: grid; 
+        justify-content: center;
+        gap: 10px;
+        grid-auto-flow: column;
+  
+        a img {
+          width: 80%; 
+          height: auto;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+  

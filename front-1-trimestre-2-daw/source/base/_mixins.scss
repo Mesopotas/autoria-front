@@ -1,0 +1,53 @@
+@use './variables';
+
+
+@mixin flex-center($justify: center, $align: center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+  }
+  
+  @mixin gradient-bg($color1, $color2, $direction: 0deg) {
+    background: $color1;
+    background: linear-gradient($direction, $color1 0%, $color2 100%);
+  }
+  
+  @mixin boton-peque(
+    $padding,
+    $font-size,
+    $border-color,
+    $font-weight: bold,
+    $hover-bg: variables.$text-color,
+    $hover-color: variables.$background-color,
+    $border-radius: 4px
+  ) {
+    padding: $padding;
+    font-size: $font-size;
+    background-color: transparent;
+    color: variables.$text-color;
+    font-weight: $font-weight;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  
+    &:hover {
+      background-color: $hover-bg;
+      color: $hover-color;
+    }
+  }
+  
+  @mixin seat(
+    $widht-seat: $widht-seat,
+    $height-seat: $height-seat,
+    $display-seat: $display-seat,
+    $background-size: $background-size-seat,
+    $background-position: $background-position-seat
+  ) {
+    width: $widht-seat;
+    height: $height-seat;
+    display: $display-seat;
+    background-size: $background-size;
+    background-position: $background-position;
+  }
+  

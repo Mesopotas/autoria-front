@@ -1,0 +1,151 @@
+.cookies {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+
+    &__content {
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        color: #fff; 
+    }
+
+    &__header {
+        text-align: center;
+        margin-bottom: 20px;
+        background-color: transparent;
+    }
+
+    &__title {
+        font-size: 2.5em;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    &__section {
+        margin-bottom: 20px;
+
+        &-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        &-text {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__list {
+        margin-left: 20px;
+        list-style-type: disc;
+
+        &-item {
+            margin-bottom: 5px;
+        }
+    }
+
+    &__link {
+        color: #1e90ff;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .cookies__content {
+      padding-top: 10px;
+      padding-bottom: 25px;
+      padding-left: 40px;
+      padding-right: 40px;
+  
+      .cookies__header {
+        .cookies__title {
+          font-size: 32px;
+        }
+  
+        .cookies__date {
+          font-size: 16px;
+        }
+      }
+  
+      .cookies__section {
+        .cookies__section-title {
+          font-size: 24px;
+          text-align: center; 
+        }
+  
+        .cookies__text {
+          font-size: 14px;
+          line-height: 22px;
+          text-align: justify; 
+        }
+  
+        .cookies__list {
+          .cookies__list-item {
+            font-size: 14px;
+            line-height: 22px;
+  
+            .cookies__link {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 390px) {
+    .cookies__content {
+      padding: 10px 20px; // Más espacio en los laterales
+    }
+  
+    .cookies__header {
+      text-align: center;
+      margin-bottom: 20px;
+  
+      .cookies__title {
+        font-size: 1.8em;
+        margin-bottom: 10px;
+      }
+  
+      .cookies__date {
+        font-size: 0.9em;
+      }
+    }
+  
+    .cookies__section {
+      margin-bottom: 20px;
+      padding: 0 15px; // Añadir espacio interno a las secciones
+  
+      .cookies__section-title {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+  
+      .cookies__text {
+        font-size: 0.9em;
+        line-height: 1.5;
+        text-align: justify;
+      }
+  
+      .cookies__list {
+        padding-left: 15px;
+        font-size: 0.9em;
+        line-height: 1.4;
+  
+        .cookies__list-item {
+          margin-bottom: 10px;
+        }
+  
+        .cookies__link {
+          font-size: 0.9em;
+          text-decoration: underline;
+          word-break: break-word;
+        }
+      }
+    }
+  }
+  

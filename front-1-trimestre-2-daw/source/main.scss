@@ -1,0 +1,22 @@
+@use 'base/mixins';
+@use 'base/reset';
+@use 'base/typography';
+@use 'base/variables';
+
+@use 'components/buttons';
+@use 'components/carrousel';
+@use 'components/categories';
+@use 'components/movie-display';
+
+@use 'layout/header';
+@use 'layout/footer';
+@use 'layout/redirect';
+
+@use 'pages/home';
+@use 'pages/butacas';
+@use 'pages/categorias';
+@use 'pages/pago';
+@use 'pages/pelicula';
+@use 'pages/dondeestamos.scss' ;
+@use 'pages/coockies.scss';
+@use 'pages/privacidad';

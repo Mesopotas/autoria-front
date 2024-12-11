@@ -1,0 +1,59 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+@use "../base/typography" as *;
+
+.footer--grid {
+  display: flex;
+  justify-content: space-evenly;
+  @include gradient-bg($gradient-color-1, $gradient-color-2, 180deg);
+  color: $text-color;
+  padding: 40px 120px;
+}
+
+.footer--contenedor p {
+  margin: 0;
+}
+
+.footer--contenedor img {
+  margin: 0;
+  max-width: 24px;
+  max-height: 30px;
+}
+
+.align-icons {
+  @include flex-center;
+  gap: 10px;
+
+  .footer--contenedor {
+    @include flex-center;
+  }
+}
+@media (max-width: 390px) {
+  .footer--grid {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    gap: 10px; 
+
+    .footer--contenedor {
+      flex: 1 0 45%; 
+      text-align: center; 
+      font-size: 0.9em; 
+      a {
+        word-wrap: break-word; 
+        white-space: normal; 
+      }
+    }
+
+    .align-icons {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px; 
+
+      img {
+        width: 24px; 
+        height: auto;
+      }
+    }
+  }
+}

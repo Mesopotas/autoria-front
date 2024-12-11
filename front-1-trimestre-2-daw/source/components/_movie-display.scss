@@ -1,0 +1,67 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+@use "../base/typography" as *;
+
+.peliculas-trending {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); 
+  gap: 25px;
+  padding-left: 5%;
+  padding-right: 5%;
+
+  .peliculas-display {
+    text-align: center;
+
+    a, img {
+      max-width: 240px;
+      min-width: 165px;
+      min-height: 300px;
+      border-radius: 30px;
+      transition: transform 0.3s; 
+    }
+
+    img:hover{
+      transform: scale(1.05);
+      cursor:pointer;
+    }
+
+    .center {
+      font-size: 0.9rem; 
+      margin-top: 10px;
+    }
+
+    p {
+      color: white;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .peliculas-trending {
+    grid-template-columns: repeat(2, 1fr);
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 390px) {
+  .peliculas-trending {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    .peliculas-display {
+      width: 60%; 
+      text-align: center;
+
+      .carrousel--imagen {
+        width: 100%;
+        border-radius: 8px; 
+      }
+
+      .center {
+        font-size: 14px; 
+        margin-top: 10px;
+      }
+    }
+  }
+}

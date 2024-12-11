@@ -1,0 +1,24 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+@use "../base/typography" as *;
+
+.categories {
+    text-align: center;
+    margin-top: 20px;
+  
+    h2 {
+      font-size: 1.5em;
+      margin: 65px 0 20px;
+      color: $text-color;
+  
+      &::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 2px;
+        background-color: $primary-color;
+        margin: 5px auto 0;
+      }
+    }
+  }
+  
